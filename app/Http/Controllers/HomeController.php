@@ -74,4 +74,12 @@ class HomeController extends Controller
         // Redirect to the student list or show the updated student details
         return redirect()->route('student')->with('success', 'Student updated successfully');
     }
+
+    public function delete($id)
+    {
+        $student = Form::findOrFail($id);
+        $student->delete();
+
+        return redirect()->route('student')->with('success', 'Student deleted successfully');
+    }
 }

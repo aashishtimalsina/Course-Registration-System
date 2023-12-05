@@ -38,7 +38,14 @@
                                         <td>{{ $student->courses }}</td>
                                         <td>
                                             <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary">Edit</a>
+                                                <form method="post" action="{{ route('student.delete', $student->id) }}" onsubmit="return confirm('Are you sure you want to delete this student?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            
                                         </td>
+                                        
                                     </tr>
                                 @endforeach
                                 </tbody>

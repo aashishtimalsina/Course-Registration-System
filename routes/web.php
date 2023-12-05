@@ -30,3 +30,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/student', [App\Http\Controllers\HomeController::class, 'student'])->name('student');
 Route::get('/student/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('student.edit');
 Route::put('/student/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('student.update');
+Route::delete('/student/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('student.delete');

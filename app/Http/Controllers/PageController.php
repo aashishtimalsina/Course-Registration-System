@@ -19,6 +19,7 @@ class PageController extends Controller
     {
         $streams = Stream::all();
         $selectedStream = $request->input('stream');
+
         return view('stream', compact('streams', 'selectedStream'));
     }
 
@@ -38,11 +39,13 @@ class PageController extends Controller
         $courses = Course::where('semester_id', $selectedSemester)->get();
         $semester = Semester::find($selectedSemester);
         $selectedSemester = $semester->name;
+
         return view('courses', compact('courses', 'selectedSemester', 'selectedStream'));
     }
+
     public function processAdditionalData(Request $request)
     {
-//        dd($request->all());
+        //        dd($request->all());
         // Validate the form data
         $validatedData = $request->validate([
             'university_id' => 'required|string',
@@ -61,6 +64,6 @@ class PageController extends Controller
         Form::create($validatedData);
 
         // Redirect or return a response as needed
-        return redirect()->back()->with('success', 'Additional data submitted successfully');
+        return redirect('/')->with('success', 'Additional data submitted successfully');
     }
 }

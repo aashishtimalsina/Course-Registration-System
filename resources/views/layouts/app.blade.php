@@ -23,9 +23,14 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-brand" href="{{ url('/student') }}">
-                    {{ ('List of Sumitted Form') }}
-                </a>
+                <button type="button" class="btn btn-primary navbar-button">
+                    <a class="navbar-brand" href="{{ url('/student') }}" >
+                        <span style="background-color: #3490dc; padding: 2px; border-radius: 9px;">
+                            {{ __('List of Submitted Forms') }}
+                        </span>
+                    </a>
+                </button>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
