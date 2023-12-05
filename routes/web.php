@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 // routes/web.php
 
-
 // routes/web.php
 
-use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'login']);
 Route::post('/stream', [PageController::class, 'selectStream']);
@@ -30,3 +28,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/student', [App\Http\Controllers\HomeController::class, 'student'])->name('student');
+Route::get('/student/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('student.edit');
+Route::put('/student/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('student.update');

@@ -21,6 +21,7 @@
                                     <th>Stream</th>
                                     <th>Semester</th>
                                     <th>Courses</th>
+                                    <th>Action</th> <!-- New column for Edit button -->
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +36,9 @@
                                         <td>{{ $student->stream }}</td>
                                         <td>{{ $student->semester }}</td>
                                         <td>{{ $student->courses }}</td>
+                                        <td>
+                                            <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary">Edit</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
