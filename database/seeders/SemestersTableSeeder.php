@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use App\Models\Semester;
 use App\Models\Stream;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
